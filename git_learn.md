@@ -21,3 +21,11 @@ git mv xx.x xx1.x  -> 改名子
 git remote  show orgin      -> 查看远程仓库的详细信息 
 git remote rename origin pb -> 将远程仓库名字orgin改为pb
 git remote remove           -> 移除远程仓库
+
+## 6. git tag
+git tag aaa -> 创建标签aaa
+git show || git tag    -> 显示标签
+git tag -d aaa         -> 删除标签
+git tag bbb hash_value -> 后期补打标签
+git push --tags        -> 将标签推送到远程仓, 没有--tags只会保留在本地
+git checkout aaa       -> 切换至指定标签版本 
