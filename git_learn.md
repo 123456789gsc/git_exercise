@@ -16,3 +16,8 @@ git mv xx.x xx1.x  -> 改名子
 
 ## 4. git comit 
 *git commit --amend* -> 处理“提交完发现忘记暂存某些修改”或“修改提交信息 
+
+## 5. git remote
+git remote  show orgin      -> 查看远程仓库的详细信息 
+git remote rename origin pb -> 将远程仓库名字orgin改为pb
+git remote remove           -> 移除远程仓库
