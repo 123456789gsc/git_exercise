@@ -35,3 +35,6 @@ git tag -d aaa         -> 删除标签
 git tag bbb hash_value -> 后期补打标签
 git push --tags        -> 将标签推送到远程仓, 没有--tags只会保留在本地
 git checkout aaa       -> 切换至指定标签版本 
+
+## 8. git push 
+git push -f orgin master -> 强制推送到远程仓（可用于版本回退）
