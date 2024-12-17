@@ -28,4 +28,10 @@ git remote remove           -> 移除远程仓库
 git reset HEAD a.xx  -> 取消a文件的暂存
 git checkout -- a.xx -> 取消a文件的修改
 
-取消暂存
+## 7. git tag
+git tag aaa -> 创建标签aaa
+git show || git tag    -> 显示标签
+git tag -d aaa         -> 删除标签
+git tag bbb hash_value -> 后期补打标签
+git push --tags        -> 将标签推送到远程仓, 没有--tags只会保留在本地
+git checkout aaa       -> 切换至指定标签版本 
