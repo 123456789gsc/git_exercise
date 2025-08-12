@@ -1,7 +1,6 @@
 # git learning
 
 ## 1. git diff 学习
-git diff          -> 对比暂存区和工作区，显示已修改
 ### 工作区 vs 暂存区：还没 add 的改动
 git diff path/to/file
 
@@ -14,8 +13,9 @@ git diff HEAD -- path/to/file
 ### 工作区 vs 指定提交
 git diff <commit> -- path/to/file
 
-###两次提交之间
+### 两次提交之间
 git diff <A> <B> -- path/to/file
+
 ### 仅看文件名变化
 git diff --name-only <A> <B> -- path/to/file
 
