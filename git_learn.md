@@ -1,9 +1,34 @@
 # git learning
 
 ## 1. git diff 学习
-git diff          -> 对比暂存区和工作区，显示已修改未暂存内容；
-git diff --staged -> 对比版本库和暂存区， 显示已暂存未提交内容
-git diff --cached 等同于 --statged
+git diff          -> 对比暂存区和工作区，显示已修改
+### 工作区 vs 暂存区：还没 add 的改动
+git diff path/to/file
+
+### 暂存区 vs 上次提交：已 add 未 commit 的改动
+git diff --cached path/to/file      # 或 --staged
+
+### 工作区 vs 上次提交（绕过暂存区总览）
+git diff HEAD -- path/to/file
+
+### 工作区 vs 指定提交
+git diff <commit> -- path/to/file
+
+###两次提交之间
+git diff <A> <B> -- path/to/file
+### 仅看文件名变化
+git diff --name-only <A> <B> -- path/to/file
+
+### 摘要统计（+/- 行数）
+git diff --stat <A> <B> -- path/to/file
+
+### 词级别对比（适合文档/长行）
+git diff --word-diff <A> <B> -- path/to/file
+
+### 忽略空白差异
+git diff -w <A> <B> -- path/to/file
+
+
 ## 2. git rm 学习
 rm xx.x + git rm xx.x -> 移除已跟踪文件，不再纳入版本管理
 git rm -f xx.x        -> 删除已修改或已暂存文件
