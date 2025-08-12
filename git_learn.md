@@ -23,9 +23,9 @@ git diff --name-only <A> <B> -- path/to/file
 git diff --stat <A> <B> -- path/to/file
 
 ### 词级别对比（适合文档/长行）
-git diff --word-diff <A> <B> -- path/to/file
+git diff --word-diff <A> <B> -- path/to/fie
 
-### 忽略空白差异
+### *忽略空白差异*
 git diff -w <A> <B> -- path/to/file
 
 
