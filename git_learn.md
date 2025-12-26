@@ -63,3 +63,73 @@ git checkout aaa       -> 切换至指定标签版本
 
 ## 8. git push 
 git push -f orgin master -> 强制推送到远程仓（可用于版本回退）
+
+## 9. git revert 
+---
+
+## 1) 回退单个提交
+
+```bash
+git revert <commit_sha>
+```
+
+## 2) 回退单个提交但不立即生成提交（先累积再手动 commit）
+
+```bash
+git revert -n <commit_sha>     # 等价 --no-commit
+# ...可继续 revert 多个
+git commit -m "Revert commits"
+```
+
+## 3) 回退一段提交（区间）
+
+> `A..B` 表示 (A, B]；要包含 A 用 `A^..B`
+
+```bash
+git revert <A>.. <B>
+# 包含A：
+git revert <A>^.. <B>
+```
+
+## 4) 回退 merge 提交（必须指定主线 parent）
+
+```bash
+git revert -m 1 <merge_commit_sha>
+```
+
+## 5) 冲突处理
+
+继续：
+
+```bash
+git add <files...>
+git revert --continue
+```
+
+放弃本次 revert：
+
+```bash
+git revert --abort
+```
+
+## 6) 编辑 revert 提交信息
+
+```bash
+git revert -e <commit_sha>
+```
+
+## 7) 自动生成不打开编辑器的 message（常用于脚本/CI）
+
+```bash
+git revert --no-edit <commit_sha>
+```
+
+## 8) 查看某个 merge 的父提交（判断 -m 用 1 还是 2）
+
+```bash
+git show --no-patch --pretty=raw <merge_commit_sha>
+```
+
+---
+
+
